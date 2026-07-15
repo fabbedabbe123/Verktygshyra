@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verktyg — Verktygshyra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Hoppa till innehåll</a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loop-path"><path d="M17 2.1 21 6l-4 3.9"/><path d="M3 12v-1a4 4 0 0 1 4-4h14"/><path d="M7 21.9 3 18l4-3.9"/><path d="M21 12v1a4 4 0 0 1-4 4H3"/></svg></span>
+        Verktygshyra
+      </a>
+      <form class="nav-search" role="search" onsubmit="event.preventDefault(); location.href='search.html?q='+encodeURIComponent(this.q.value)">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" name="q" placeholder="Sök efter verktyg…" aria-label="Sök verktyg" />
+      </form>
+      <nav class="nav-links" aria-label="Huvudmeny">
+        <a class="btn btn-ghost" href="my-tools.html">Hyr ut verktyg</a>
+        <a class="btn btn-ghost" href="login.html">Logga in</a>
+        <a class="btn btn-primary" href="register.html">Skapa konto</a>
+      </nav>
+      <button class="hamburger" aria-label="Öppna meny" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="section section-tight">
+    <div class="container" id="productRoot">
+      <!-- Rendered by product.js -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <span>© 2026 Verktygshyra. Alla rättigheter förbehållna.</span>
+      <a href="../index.html" style="color: var(--color-green-600); font-weight:600;">Till startsidan</a>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/product.js"></script>
+</body>
+</html>
