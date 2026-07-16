@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verktygshyra — Hyr verktyg nära dig istället för att köpa nytt</title>
+  <meta name="description" content="Hyr borrmaskiner, sågar, högtryckstvättar och trädgårdsmaskiner av personer i din närhet. Billigare, enklare och mer hållbart än att köpa nytt." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Hoppa till innehåll</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="loop-path">
+            <path d="M17 2.1 21 6l-4 3.9"/><path d="M3 12v-1a4 4 0 0 1 4-4h14"/>
+            <path d="M7 21.9 3 18l4-3.9"/><path d="M21 12v1a4 4 0 0 1-4 4H3"/>
+          </svg>
+        </span>
+        Verktygshyra
+      </a>
+
+      <form class="nav-search" id="heroSearchForm" role="search">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" name="q" placeholder="Sök efter borrmaskin, slip, stege…" aria-label="Sök verktyg" />
+      </form>
+
+      <nav class="nav-links" aria-label="Huvudmeny">
+        <a class="btn btn-ghost" href="pages/login.html">Logga in</a>
+        <a class="btn btn-primary" href="#waitlistCard">Gå med i väntelistan</a>
+      </nav>
+
+      <button class="hamburger" aria-label="Öppna meny" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Nu live i Malmö &amp; Lund</span>
+          <h1>Hyr verktyg nära dig istället för att köpa nytt.</h1>
+          <p>Spara pengar, tjäna pengar och minska onödig konsumtion. Tusentals verktyg står oanvända i garage — hitta ett i din stad på under en minut.</p>
+          <div class="hero-cta">
+            <a href="#waitlistCard" class="btn btn-primary btn-lg">Gå med i väntelistan</a>
+            <a href="pages/search.html" class="btn btn-outline btn-lg">Utforska verktyg</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><strong>2 400+</strong><span>Verktyg tillgängliga</span></div>
+            <div class="hero-stat"><strong>4.8 / 5</strong><span>Snittbetyg</span></div>
+            <div class="hero-stat"><strong>18 min</strong><span>Snitt svarstid</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orbit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <div class="floating-card fc-1">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30h26l6-6h14a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4H32l-6-6"/></svg>
+            <span><strong>Borrmaskin</strong><span>89 kr/dag · Malmö</span></span>
+          </div>
+          <div class="floating-card fc-2">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="18" width="18" height="24" rx="3"/></svg>
+            <span><strong>Högtryckstvätt</strong><span>119 kr/dag · Malmö</span></span>
+          </div>
+          <div class="floating-card fc-3">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8 12 56"/><path d="M44 8 36 56"/><path d="M15 18h24"/></svg>
+            <span><strong>Stege 4m</strong><span>49 kr/dag · Lund</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Kategorier</span>
+            <h2>Vad behöver du hjälp med idag?</h2>
+          </div>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+          <!-- Rendered by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" style="background: var(--color-bg-soft);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Så funkar det</span>
+            <h2>Från sökning till projekt på minuter</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step-num">1</span>
+            <h3>Hitta ett verktyg</h3>
+            <p>Sök på kategori, stad eller verktygstyp och jämför pris, betyg och avstånd.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step-num">2</span>
+            <h3>Boka direkt</h3>
+            <p>Välj datum, boka i appen och betala tryggt via plattformen — inga kontanter, inga krångliga meddelanden.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step-num">3</span>
+            <h3>Hämta och lämna tillbaka</h3>
+            <p>Möt ägaren, hämta verktyget och lämna tillbaka det när du är klar. Enkelt som det ska vara.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED TOOLS ============ -->
+    <section class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Populärt just nu</span>
+            <h2>Verktyg nära dig</h2>
+            <p>De mest bokade verktygen i Malmö och Lund den senaste veckan.</p>
+          </div>
+          <a href="pages/search.html" class="btn btn-outline">Se alla verktyg</a>
+        </div>
+        <div class="tool-grid" id="toolGrid">
+          <!-- Rendered by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BENEFITS ============ -->
+    <section class="section" style="background: var(--color-bg-soft);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Fördelar</span>
+            <h2>Bra affär oavsett vilken sida du står på</h2>
+          </div>
+        </div>
+        <div class="benefit-panels">
+          <div class="benefit-panel panel-borrow reveal">
+            <h3>För dig som hyr</h3>
+            <div class="benefit-list">
+              <div class="benefit-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M16 12h3"/></svg>
+                <span>Betydligt billigare än att köpa ett verktyg du använder en gång per år.</span>
+              </div>
+              <div class="benefit-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Lokalt — hämta hos någon i din stadsdel, inga leveranstider.</span>
+              </div>
+              <div class="benefit-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c8-2 10-8 10-18-10 0-16 2-18 10 0 5 3 8 8 8Z"/><path d="M8 16C10 12 14 9 20 5"/></svg>
+                <span>Mer hållbart — färre nytillverkade verktyg som bara samlar damm.</span>
+              </div>
+            </div>
+            <a href="pages/search.html" class="btn btn-outline">Börja hyra</a>
+          </div>
+          <div class="benefit-panel panel-lend reveal">
+            <h3>För dig som hyr ut</h3>
+            <div class="benefit-list">
+              <div class="benefit-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M16 12h3"/></svg>
+                <span>Tjäna pengar på verktyg som ändå bara står i garaget.</span>
+              </div>
+              <div class="benefit-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9"/></svg>
+                <span>Full kontroll över pris, tillgänglighet och vem som får hyra.</span>
+              </div>
+              <div class="benefit-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg>
+                <span>Trygg betalning direkt till dig via plattformen.</span>
+              </div>
+            </div>
+            <a href="pages/my-tools.html" class="btn btn-secondary">Lägg upp ditt första verktyg</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ ABOUT / TRUST ============ -->
+    <section class="section section-tight" id="om-oss">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Om oss</span>
+            <h2>Byggt av två UF-elever som tröttnat på att köpa verktyg vi använder en gång</h2>
+            <p>Verktygshyra startade som ett UF-företag i Malmö. Idén är enkel: de flesta verktyg i ett garage används några timmar per år — resten av tiden kunde de hjälpa någon annan i grannskapet, och samtidigt ge ägaren lite extra pengar i fickan.</p>
+          </div>
+        </div>
+
+        <div class="benefit-panels">
+          <div class="benefit-panel panel-borrow reveal">
+            <h3>Varför vi bygger det här</h3>
+            <p style="color: var(--color-text-muted); font-size: var(--fs-sm); line-height: 1.7;">
+              Vi är i en tidig fas och bygger detta öppet, steg för steg, tillsammans med de första användarna i Malmö och Lund. Det betyder att ni som går med tidigt faktiskt kan påverka hur tjänsten utvecklas — vi lyssnar på varje kommentar.
+            </p>
+          </div>
+          <div class="benefit-panel panel-lend reveal">
+            <h3>Trygghet är kärnan, inte en eftertanke</h3>
+            <p style="color: rgba(255,255,255,0.85); font-size: var(--fs-sm); line-height: 1.7;">
+              Varje bokning skyddas av en deposition. Foton tas vid hämtning och återlämning så att ingen behöver ta någons ord för något. Läs mer i vår <a href="#faq" style="color:#fff; text-decoration: underline;">Vanliga frågor</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section-tight" id="faq" style="background: var(--color-bg-soft);">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Vanliga frågor</span>
+            <h2>Det ni undrar mest över</h2>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item reveal" open>
+            <summary>Vad händer om verktyget går sönder under min hyrestid?</summary>
+            <p>Vid hämtning och återlämning tar både du och ägaren bilder på verktyget i appen — det är vårt gemensamma bevis. Om felet bedöms bero på hur verktyget användes går depositionen till ägaren som ersättning. Om verktyget istället visar sig vara trasigt redan vid hämtning, eller går sönder av ett fel som inte beror på dig, avbryts hyrningen och du får hela din deposition tillbaka.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Hur stor är depositionen?</summary>
+            <p>Depositionen varierar per verktyg och sätts av ägaren, oftast i nivå med verktygets ungefärliga återanskaffningsvärde. Den dras aldrig automatiskt — den betalas bara ut om båda parter är överens, eller efter vår granskning vid en tvist.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Är detta en riktig, färdig tjänst redan idag?</summary>
+            <p>Ärligt svar: vi är i en tidig testfas som UF-företag. Sajten du ser är vår vision för hur tjänsten kommer fungera, och vi bygger den tillsammans med de första riktiga användarna i Malmö och Lund. Gå med i väntelistan så hör du av oss så fort du kan boka på riktigt.</p>
+          </details>
+          <details class="faq-item reveal">
+            <summary>Vad kostar det att hyra ut mitt verktyg?</summary>
+            <p>Det är gratis att lista ditt verktyg. Vi tar en mindre serviceavgift av hyrespriset först när en bokning faktiskt genomförs — du betalar alltså aldrig något om ingen hyr.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="waitlist-section reveal">
+          <div class="waitlist-inner">
+            <div class="waitlist-copy">
+              <span class="eyebrow">Kommer snart</span>
+              <h2>Bli en av de första i din stad</h2>
+              <p>Vi lanserar stad för stad. Gå med i väntelistan så hör vi av oss så fort Verktygshyra öppnar där du bor — och du får förtur oavsett om du vill hyra eller hyra ut.</p>
+              <div class="waitlist-points">
+                <div class="benefit-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Förtur när vi lanserar i din stad</span>
+                </div>
+                <div class="benefit-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Inga bindningar — gå med gratis, hoppa av när du vill</span>
+                </div>
+                <div class="benefit-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  <span>Var med och forma vilka verktyg som listas först</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="waitlist-card" id="waitlistCard">
+              <h3>Gå med i väntelistan</h3>
+              <form id="waitlistForm">
+                <div class="field">
+                  <label for="wlName">Namn</label>
+                  <input type="text" id="wlName" name="name" placeholder="För- och efternamn" required />
+                </div>
+                <div class="field">
+                  <label for="wlEmail">E-postadress</label>
+                  <input type="email" id="wlEmail" name="email" placeholder="du@exempel.se" required />
+                </div>
+                <div class="field">
+                  <label for="wlCity">Stad</label>
+                  <select id="wlCity" name="city">
+                    <option>Malmö</option>
+                    <option>Lund</option>
+                    <option>Stockholm</option>
+                    <option>Göteborg</option>
+                    <option>Annan stad</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Jag vill helst</label>
+                  <div class="waitlist-role-group">
+                    <div class="waitlist-role-option">
+                      <input type="radio" id="wlRoleBorrow" name="role" value="Hyra verktyg" checked />
+                      <label for="wlRoleBorrow">Hyra verktyg</label>
+                    </div>
+                    <div class="waitlist-role-option">
+                      <input type="radio" id="wlRoleLend" name="role" value="Hyra ut verktyg" />
+                      <label for="wlRoleLend">Hyra ut verktyg</label>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Gå med i väntelistan</button>
+                <p class="field-hint" style="text-align:center; margin-top: 12px;">Ingen skräppost. Bara ett mejl när vi lanserar hos dig.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 12px;">
+            <span class="logo-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2.1 21 6l-4 3.9"/><path d="M3 12v-1a4 4 0 0 1 4-4h14"/><path d="M7 21.9 3 18l4-3.9"/><path d="M21 12v1a4 4 0 0 1-4 4H3"/></svg>
+            </span>
+            Verktygshyra
+          </a>
+          <p style="color: var(--color-text-muted); font-size: var(--fs-sm); max-width: 32ch;">Marknadsplatsen för att hyra och hyra ut verktyg mellan privatpersoner.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Företaget</h4>
+          <ul>
+            <li><a href="#om-oss">Om oss</a></li>
+            <li><a href="mailto:hej@verktygshyra.se">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#faq">Vanliga frågor</a></li>
+            <li><a href="#faq">Trygghet &amp; deposition</a></li>
+            <li><a href="mailto:hej@verktygshyra.se">Kontakta support</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Juridik</h4>
+          <ul>
+            <li><a href="#">Integritetspolicy</a></li>
+            <li><a href="#">Användarvillkor</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Verktygshyra. Alla rättigheter förbehållna.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9h3V5h-3a4 4 0 0 0-4 4v2H7v4h3v6h4v-6h3l1-4h-4V9a1 1 0 0 1 1-1Z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/waitlist.js"></script>
+</body>
+</html>
